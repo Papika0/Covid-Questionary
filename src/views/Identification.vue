@@ -14,9 +14,11 @@
                 </div>
                 <SecondPagePhoto />
             </div>
-            <button @click="submitAndNext" class="mx-auto flex pl-32">
-                <NextArrow />
-            </button>
+            <div class="mx-auto flex justify-center">
+                <button @click="submitAndNext" class="ml-32">
+                    <NextArrow />
+                </button>
+            </div>
         </Form>
     </FormLayout>
 </template>
