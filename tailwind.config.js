@@ -23,6 +23,12 @@ export default {
       borderColor: {
         'primary': '#232323',
       },
+      fontSize: {
+        header: '22px',
+      },
+      accentColor: {
+        'primary': '#232323',
+      },
     },
     plugins: [],
   }
