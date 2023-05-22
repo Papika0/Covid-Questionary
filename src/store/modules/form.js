@@ -15,6 +15,9 @@ export default {
       antibodies_test_date: getValueFromLocalStorage('antibodies_test_date'),
       antibodies_number: getValueFromLocalStorage('antibodies_number'),
       covid_sickness_date: getValueFromLocalStorage('covid_sickness_date'),
+      had_vaccine: getValueFromLocalStorage('had_vaccine'),
+      vaccination_stage: getValueFromLocalStorage('vaccination_stage'),
+      i_am_waiting: getValueFromLocalStorage('i_am_waiting'),
     },
   },
   mutations: {

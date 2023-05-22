@@ -13,6 +13,7 @@ export default {
       textColor: {
         'primary': '#232323',
         'my-grey': '#626262',
+        "my-blue": "#1289AE",
       },
       width: {
         '500' : '500px',
