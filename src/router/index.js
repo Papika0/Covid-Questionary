@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Identification from '../views/Identification.vue'
-import CovidQuestions from '../views/CovidQuestions.vue'
+import Home from '@/views/Home.vue'
+import Identification from '@/views/Identification.vue'
+import CovidQuestions from '@/views/CovidQuestions.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
