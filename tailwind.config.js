@@ -13,6 +13,7 @@ export default {
       textColor: {
         'primary': '#232323',
         'my-grey': '#626262',
+        "my-blue": "#1289AE",
       },
       width: {
         '500' : '500px',
@@ -21,6 +22,12 @@ export default {
         '0.8': '0.8px',
       },
       borderColor: {
+        'primary': '#232323',
+      },
+      fontSize: {
+        header: '22px',
+      },
+      accentColor: {
         'primary': '#232323',
       },
     },

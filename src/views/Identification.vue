@@ -3,10 +3,11 @@
         <Form @submit="onSubmit">
             <div class="flex flex-row justify-between">
                 <div class="flex flex-col mt-10 gap-12">
-                    <InputField label="სახელი*" placeholder="იოსებ" name="name" :oldValue="formData.name" />
-                    <InputField label="გვარი*" placeholder="ჯუღაშვილი" name="surname" :oldValue="formData.surname" />
+                    <InputField label="სახელი*" placeholder="იოსებ" name="name" :oldValue="this.getAllFormData.name" />
+                    <InputField label="გვარი*" placeholder="ჯუღაშვილი" name="surname"
+                        :oldValue="this.getAllFormData.surname" />
                     <InputField label="მეილი*" placeholder="fbi@redberry.ge" name="email" type="email"
-                        rules="required|email|redberry_ge" :oldValue="formData.email" />
+                        rules="required|email|redberry_ge" :oldValue="this.getAllFormData.email" />
                     <div class="mt-16">
                         <hr class="border-0.8 border-black w-5/12 mb-5">
                         <p class="text-my-grey">*-ით მონიშნული ველების შევსება <br> სავალდებულოა</p>
@@ -24,7 +25,7 @@
 </template>
   
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapGetters } from 'vuex';
 import FormLayout from '@/components/layouts/FormLayout.vue';
 import SecondPagePhoto from '@/components/icons/SecondPagePhoto.vue';
 import InputField from '@/components/form/InputField.vue';
@@ -40,17 +41,13 @@ export default {
         Form
     },
     methods: {
-        ...mapMutations('form', ['updateFormData', 'getDataFromLocalStorage']),
         onSubmit() {
             this.$router.push('/covid-questions');
         }
     },
     computed: {
-        ...mapState('form', ['formData'])
+        ...mapGetters('form', ['getAllFormData']),
     },
-    beforeMount() {
-        this.getDataFromLocalStorage();
-    }
 };
 </script>
   
