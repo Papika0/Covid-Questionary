@@ -6,6 +6,11 @@
   font-family: 'Helvetica Neue LT GEO';
   src: url(./fonts/bpg_arial_2009.ttf);
 }
+
+@font-face {
+  font-family: "TBC Contractica CAPS";
+  src: url(./fonts/TBCContracticaCAPS-Bold.ttf);
+}
 *,
 *::before,
 *::after {
