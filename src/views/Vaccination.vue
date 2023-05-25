@@ -6,8 +6,9 @@
                     <div class="flex flex-col gap-2 ">
                         <HeadingParagraph>უკვე აცრილი ხარ?*</HeadingParagraph>
                         <RadioButton name="had_vaccine" value="yes" label="კი" rules="isChecked"
-                            :oldValue="this.getAllFormData.had_vaccine" />
-                        <RadioButton name="had_vaccine" value="no" label="არა" />
+                            :oldValue="this.getAllFormData.had_vaccine" @click="clearFormData(['i_am_waiting'])" />
+                        <RadioButton name="had_vaccine" value="no" label="არა"
+                            @click="clearFormData(['vaccination_stage'])" />
                     </div>
                     <div class="flex flex-col gap-2" v-if="checkIfHadVacine()">
                         <HeadingParagraph>აირჩიე რა ეტაპზე ხარ*</HeadingParagraph>
@@ -59,7 +60,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 import FormLayout from '@/components/layouts/FormLayout.vue';
 import FourthPagePhoto from '@/components/icons/FourthPagePhoto.vue';
 import RadioButton from '@/components/form/RadioButton.vue';
@@ -84,6 +85,7 @@ export default {
         ...mapGetters('form', ['getAllFormData']),
     },
     methods: {
+        ...mapMutations('form', ['clearFormData']),
         PreviosPage() {
             this.$router.push('/covid-questions');
         },
