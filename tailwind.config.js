@@ -48,6 +48,13 @@ export default {
       margin: {
         '370': '370px',
       },
+      animation: {
+        'slide-in': 'slide-in 1s ease-out forwards 500ms',
+        'shrink': 'shrink 300ms ease-in-out forwards',
+      },
+      dropShadow: {
+        'my-shadow': '0 1px 1px rgba(35,35,35,1)',
+      },
     },
     plugins: [],
   }
