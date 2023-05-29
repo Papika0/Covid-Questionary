@@ -7,14 +7,18 @@
                         <HeadingParagraph>გაქვს გადატანილი Covid-19?*</HeadingParagraph>
                         <RadioButton name="had_covid" value="yes" label="კი" rules="isChecked"
                             :oldValue="this.getAllFormData.had_covid" />
-                        <RadioButton name="had_covid" value="no" label="არა" />
-                        <RadioButton name="had_covid" value="have_right_now" label="ახლა მაქვს" />
+                        <RadioButton name="had_covid" value="no" label="არა"
+                            @click="clearFormData(['had_antibody_test', 'covid_sickness_date', 'antibodies_test_date', 'antibodies_number'])" />
+                        <RadioButton name="had_covid" value="have_right_now" label="ახლა მაქვს"
+                            @click="clearFormData(['had_antibody_test', 'covid_sickness_date', 'antibodies_test_date', 'antibodies_number'])" />
                     </div>
                     <div class="flex flex-col gap-2 " v-if="checkIfHadCovid()">
                         <HeadingParagraph>ანტისხეულების ტესტი გაქვს გაკეთებული?*</HeadingParagraph>
                         <RadioButton name="had_antibody_test" value="yes" label="კი" rules="isChecked"
+                            @click="clearFormData(['covid_sickness_date'])"
                             :oldValue="this.getAllFormData.had_antibody_test" />
-                        <RadioButton name="had_antibody_test" value="no" label="არა" />
+                        <RadioButton name="had_antibody_test" value="no" label="არა"
+                            @click="clearFormData(['antibodies_test_date', 'antibodies_number'])" />
                     </div>
                     <div class="flex flex-col gap-2" v-if="checkIfHadAntibodyTest('yes')">
                         <HeadingParagraph>თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*
@@ -44,7 +48,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 import FormLayout from '@/components/layouts/FormLayout.vue';
 import ThirdPagePhoto from '@/components/icons/ThirdPagePhoto.vue';
 import RadioButton from '@/components/form/RadioButton.vue';
@@ -69,6 +73,7 @@ export default {
         ...mapGetters('form', ['getAllFormData']),
     },
     methods: {
+        ...mapMutations('form', ['clearFormData']),
         checkIfHadCovid() {
             return this.getAllFormData.had_covid === 'yes';
         },

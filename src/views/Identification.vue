@@ -3,9 +3,10 @@
         <Form @submit="onSubmit">
             <div class="flex flex-row justify-between">
                 <div class="flex flex-col mt-10 gap-12">
-                    <InputField label="სახელი*" placeholder="იოსებ" name="name" :oldValue="this.getAllFormData.name" />
-                    <InputField label="გვარი*" placeholder="ჯუღაშვილი" name="surname"
-                        :oldValue="this.getAllFormData.surname" />
+                    <InputField label="სახელი*" placeholder="იოსებ" name="first_name"
+                        :oldValue="this.getAllFormData.first_name" />
+                    <InputField label="გვარი*" placeholder="ჯუღაშვილი" name="last_name"
+                        :oldValue="this.getAllFormData.last_name" />
                     <InputField label="მეილი*" placeholder="fbi@redberry.ge" name="email" type="email"
                         rules="required|email|redberry_ge" :oldValue="this.getAllFormData.email" />
                     <div class="mt-16">
