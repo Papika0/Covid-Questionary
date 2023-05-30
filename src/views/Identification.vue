@@ -14,7 +14,10 @@
                         <p class="text-my-grey">*-ით მონიშნული ველების შევსება <br> სავალდებულოა</p>
                     </div>
                 </div>
-                <SecondPagePhoto />
+                <div class="max-h-[781px]">
+                    <IconSecondPageRectangle class="absolute mt-56 -z-10 ml-40 animate-slide" />
+                    <SecondPagePhoto />
+                </div>
             </div>
             <div class="mx-auto flex justify-center">
                 <button @click="submitAndNext" class="ml-32">
@@ -29,6 +32,7 @@
 import { mapGetters } from 'vuex';
 import FormLayout from '@/components/layouts/FormLayout.vue';
 import SecondPagePhoto from '@/components/icons/SecondPagePhoto.vue';
+import IconSecondPageRectangle from '@/components/icons/IconSecondPageRectangle.vue';
 import InputField from '@/components/form/InputField.vue';
 import NextArrow from '@/components/icons/NextArrow.vue';
 import { Form } from 'vee-validate';
@@ -37,6 +41,7 @@ export default {
     components: {
         FormLayout,
         SecondPagePhoto,
+        IconSecondPageRectangle,
         InputField,
         NextArrow,
         Form

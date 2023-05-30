@@ -35,7 +35,10 @@
                             :oldValue="this.getAllFormData.covid_sickness_date" />
                     </div>
                 </div>
-                <ThirdPagePhoto />
+                <div class="max-h-[781px]">
+                    <IconThirdPageCircle class="absolute mt-60 ml-20 -z-10 animate-slide" />
+                    <ThirdPagePhoto />
+                </div>
             </div>
             <div class="flex flex-row gap-28 justify-center">
                 <BackArrow @click="PreviosPage" />
@@ -52,6 +55,7 @@ import { mapGetters, mapMutations } from 'vuex';
 import FormLayout from '@/components/layouts/FormLayout.vue';
 import ThirdPagePhoto from '@/components/icons/ThirdPagePhoto.vue';
 import RadioButton from '@/components/form/RadioButton.vue';
+import IconThirdPageCircle from '@/components/icons/IconThirdPageCircle.vue';
 import InputField from '@/components/form/InputField.vue';
 import HeadingParagraph from '@/components/form/HeadingParagraph.vue';
 import NextArrow from '@/components/icons/NextArrow.vue';
@@ -65,6 +69,7 @@ export default {
         InputField,
         RadioButton,
         HeadingParagraph,
+        IconThirdPageCircle,
         NextArrow,
         BackArrow,
         Form
