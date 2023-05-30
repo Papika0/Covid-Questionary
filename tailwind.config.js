@@ -51,6 +51,11 @@ export default {
       animation: {
         'slide-in': 'slide-in 1s ease-out forwards 500ms',
         'shrink': 'shrink 300ms ease-in-out forwards',
+        'shrink-little': 'shrink-little 300ms ease-in-out forwards',
+        'opacity': 'opacity 1s ease-in-out forwards',
+        'pop-up': 'pop-up 300ms ease-in-out forwards 1s',
+        'pop-up-down': 'pop-up-down 300ms ease-in-out forwards 1s',
+        'slide': 'slide 400ms ease-in-out forwards',
       },
       dropShadow: {
         'my-shadow': '0 1px 1px rgba(35,35,35,1)',
