@@ -47,7 +47,11 @@
                     </TextSuggestion>
 
                 </div>
-                <FourthPagePhoto />
+                <div class="max-h-[781px] ">
+                    <IconForthPageStar class="absolute -z-10 ml-10 animate-slide" />
+                    <FourthPagePhoto />
+                </div>
+
             </div>
             <div class="flex flex-row gap-28 justify-center">
                 <BackArrow @click="PreviosPage" />
@@ -63,6 +67,7 @@
 import { mapGetters, mapMutations } from 'vuex';
 import FormLayout from '@/components/layouts/FormLayout.vue';
 import FourthPagePhoto from '@/components/icons/FourthPagePhoto.vue';
+import IconForthPageStar from '@/components/icons/IconForthPageStar.vue';
 import RadioButton from '@/components/form/RadioButton.vue';
 import HeadingParagraph from '@/components/form/HeadingParagraph.vue';
 import NextArrow from '@/components/icons/NextArrow.vue';
@@ -74,6 +79,7 @@ export default {
     components: {
         FormLayout,
         FourthPagePhoto,
+        IconForthPageStar,
         RadioButton,
         HeadingParagraph,
         TextSuggestion,

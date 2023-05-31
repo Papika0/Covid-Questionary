@@ -49,7 +49,11 @@
                     </div>
 
                 </div>
-                <IconFifthPage />
+                <div class="max-h-[781px] ">
+                    <IconFifthPageHeart class="absolute mt-32 -z-10 ml-24 animate-shrink-little" />
+                    <IconFifthPage />
+                </div>
+
             </div>
             <div class="flex flex-row gap-28 justify-center mt-20 mb-24">
                 <BackArrow @click="PreviosPage" />
@@ -62,6 +66,7 @@
 import { mapGetters, mapMutations } from 'vuex';
 import FormLayout from '@/components/layouts/FormLayout.vue';
 import IconFifthPage from '@/components/icons/IconFifthPage.vue';
+import IconFifthPageHeart from '@/components/icons/IconFifthPageHeart.vue';
 import RadioButton from '@/components/form/RadioButton.vue';
 import HeadingParagraph from '@/components/form/HeadingParagraph.vue';
 import NextArrow from '@/components/icons/NextArrow.vue';
@@ -75,6 +80,7 @@ export default {
     components: {
         FormLayout,
         IconFifthPage,
+        IconFifthPageHeart,
         RadioButton,
         HeadingParagraph,
         TextSuggestion,
