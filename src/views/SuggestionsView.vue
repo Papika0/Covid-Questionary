@@ -73,7 +73,7 @@ import NextArrow from '@/components/icons/IconNextArrow.vue';
 import BackArrow from '@/components/icons/IconBackArrow.vue';
 import TextSuggestion from '@/components/shared/TextSuggestion.vue';
 import InputTextarea from '@/components/ui/InputTextarea.vue';
-import { createFormData } from '@/services/sendData.js';
+import { sendFormData } from '@/services/sendData.js';
 import { Form } from 'vee-validate';
 
 export default {
@@ -101,12 +101,12 @@ export default {
             this.transformAndSetFormData();
             const filteredPairs = Object.entries(this.getAllFormData).filter(([key, value]) => value !== '');
             const filteredObject = Object.fromEntries(filteredPairs);
-            try {
-                await createFormData(filteredObject);
+            const success = await sendFormData(filteredObject);
+            if (success) {
                 this.$router.push('/thank-you');
                 localStorage.clear();
-            } catch (error) {
-                console.log(error);
+            } else {
+                console.log('API request was not successful');
             }
         },
     },
