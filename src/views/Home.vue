@@ -7,7 +7,7 @@
                     class="font-bold group text-3xl whitespace-pre-line font-contractica absolute animate-slide-in invisible hover:drop-shadow-my-shadow">კითხვარის
                     <br> დაწყება
                     <div
-                        class="absolute -z-10 top-[1px] left-[2px] transition-all text-white drop-shadow-my-shadow opacity-0 group-hover:opacity-100">
+                        class="absolute -z-10 top-1 left-2 transition-all text-white drop-shadow-my-shadow opacity-0 group-hover:opacity-100">
                         კითხვარის <br> დაწყება
                     </div>
                 </router-link>

@@ -38,6 +38,13 @@ export default {
       maxWidth: {
         '630': '630px',
       },
+      maxHeight: {
+        '781': '781px',
+      },
+      spacing: {
+        '1': '1px',
+        '2': '2px',
+      },
       lineHeight: {
         'header': '27px',
         "main": "77px",

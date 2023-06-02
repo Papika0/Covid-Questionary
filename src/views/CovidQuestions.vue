@@ -23,9 +23,9 @@
                     <div class="flex flex-col gap-2" v-if="checkIfHadAntibodyTest('yes')">
                         <HeadingParagraph>თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*
                         </HeadingParagraph>
-                        <InputField placeholder="რიცხვი" name="antibodies_test_date" type="date" rules="date" class="px-5"
-                            :oldValue="this.getAllFormData.antibodies_test_date" />
-                        <InputField placeholder="ანტისხეულების რაოდენობა" name="antibodies_number" rules="number"
+                        <InputField placeholder="რიცხვი" name="antibodies_test_date" type="date" rules="date|required"
+                            class="px-5" :oldValue="this.getAllFormData.antibodies_test_date" />
+                        <InputField placeholder="ანტისხეულების რაოდენობა" name="antibodies_number" rules="number|required"
                             class="px-5" :oldValue="this.getAllFormData.antibodies_number" />
                     </div>
                     <div class="flex flex-col gap-2" v-if="checkIfHadAntibodyTest('no')">
@@ -35,13 +35,13 @@
                             :oldValue="this.getAllFormData.covid_sickness_date" />
                     </div>
                 </div>
-                <div class="max-h-[781px]">
+                <div class="max-h-781">
                     <IconThirdPageCircle class="absolute mt-60 ml-20 -z-10 animate-slide" />
                     <ThirdPagePhoto />
                 </div>
             </div>
             <div class="flex flex-row gap-28 justify-center">
-                <BackArrow @click="PreviosPage" />
+                <BackArrow @click="PreviosPage" class="cursor-pointer" />
                 <button>
                     <NextArrow />
                 </button>

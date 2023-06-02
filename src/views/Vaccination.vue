@@ -47,14 +47,14 @@
                     </TextSuggestion>
 
                 </div>
-                <div class="max-h-[781px] ">
+                <div class="max-h-781">
                     <IconForthPageStar class="absolute -z-10 ml-10 animate-slide" />
                     <FourthPagePhoto />
                 </div>
 
             </div>
             <div class="flex flex-row gap-28 justify-center">
-                <BackArrow @click="PreviosPage" />
+                <BackArrow @click="PreviosPage" class="cursor-pointer" />
                 <button>
                     <NextArrow />
                 </button>

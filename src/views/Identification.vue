@@ -14,7 +14,7 @@
                         <p class="text-my-grey">*-ით მონიშნული ველების შევსება <br> სავალდებულოა</p>
                     </div>
                 </div>
-                <div class="max-h-[781px]">
+                <div class="max-h-781">
                     <IconSecondPageRectangle class="absolute mt-56 -z-10 ml-40 animate-slide" />
                     <SecondPagePhoto />
                 </div>

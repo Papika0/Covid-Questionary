@@ -49,14 +49,14 @@
                     </div>
 
                 </div>
-                <div class="max-h-[781px] ">
+                <div class="max-h-781 ">
                     <IconFifthPageHeart class="absolute mt-32 -z-10 ml-24 animate-shrink-little" />
                     <IconFifthPage />
                 </div>
 
             </div>
             <div class="flex flex-row gap-28 justify-center mt-20 mb-24">
-                <BackArrow @click="PreviosPage" />
+                <BackArrow @click="PreviosPage" class="cursor-pointer" />
             </div>
         </Form>
     </FormLayout>
