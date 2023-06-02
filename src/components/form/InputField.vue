@@ -19,16 +19,30 @@ export default {
         ErrorMessage
     },
     props: {
-        label: String,
-        placeholder: String,
-        name: String,
-        oldValue: String,
+        label: {
+            type: String,
+            required: true
+        },
+        placeholder: {
+            type: String,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true,
+        },
+        oldValue: {
+            type: String,
+            required: true,
+        },
         textType: {
             type: String,
+            required: false,
             default: "text"
         },
         rules: {
             type: String,
+            required: false,
             default: "required|min:2"
         }
     },

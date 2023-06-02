@@ -73,7 +73,7 @@ import NextArrow from '@/components/icons/NextArrow.vue';
 import BackArrow from '@/components/icons/BackArrow.vue';
 import TextSuggestion from '@/components/ui/TextSuggestion.vue';
 import TextArea from '@/components/form/TextArea.vue';
-import api from "@/config/axios/index.js";
+import { createFormData } from '@/services/sendData.js';
 import { Form } from 'vee-validate';
 
 export default {
@@ -97,23 +97,17 @@ export default {
         PreviosPage() {
             this.$router.push('/vaccination');
         },
-        onSubmit() {
+        async onSubmit() {
             this.transformAndSetFormData();
             const filteredPairs = Object.entries(this.getAllFormData).filter(([key, value]) => value !== '');
             const filteredObject = Object.fromEntries(filteredPairs);
-
-            api.post('/create', JSON.stringify(filteredObject))
-                .then((response) => {
-                    if (response.status === 201) {
-                        this.$router.push('/thank-you');
-                        localStorage.clear();
-                    } else {
-                        console.log('API request was not successful');
-                    }
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+            try {
+                await createFormData(filteredObject);
+                this.$router.push('/thank-you');
+                localStorage.clear();
+            } catch (error) {
+                console.log(error);
+            }
         },
     },
 

@@ -7,8 +7,14 @@
 import { mapMutations } from 'vuex';
 export default {
     props: {
-        name: String,
-        oldValue: String,
+        name: {
+            type: String,
+            required: true,
+        },
+        oldValue: {
+            type: String,
+            required: true,
+        }
     },
 
     methods: {

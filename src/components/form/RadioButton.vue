@@ -15,14 +15,27 @@ export default {
         ErrorMessage
     },
     props: {
-        name: String,
-        value: String,
-        label: String,
+        name: {
+            type: String,
+            required: true
+        },
+        value: {
+            type: String,
+            required: true
+        },
+        label: {
+            type: String,
+            required: true
+        },
         rules: {
             type: String,
+            required: false,
             default: ""
         },
-        oldValue: String
+        oldValue: {
+            type: String,
+            required: true
+        }
     },
     data() {
         return {
