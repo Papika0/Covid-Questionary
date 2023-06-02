@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto">
         <div class="flex flex-col gap-24 text-center justify-center mt-80">
-            <MainLogo class="animate-shrink mx-auto" />
+            <IconHomeLogo class="animate-shrink mx-auto" />
             <div class="relative overflow-hidden h-24 mr-48">
                 <router-link id="text" to="/identification"
                     class="font-bold group text-3xl whitespace-pre-line font-contractica absolute animate-slide-in invisible hover:drop-shadow-my-shadow">კითხვარის
@@ -17,6 +17,6 @@
 </template>
   
 <script setup>
-import MainLogo from '@/components/icons/MainLogo.vue';
+import IconHomeLogo from '@/components/icons/home/IconHomeLogo.vue';
 </script>
 

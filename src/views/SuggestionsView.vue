@@ -17,31 +17,31 @@
                     <div class="flex flex-col gap-2 ">
                         <HeadingParagraph>რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა
                             სურვილისამებრ ჩაერთვება?*</HeadingParagraph>
-                        <RadioButton name="non_formal_meetings" value="twice_a_week" label="კვირაში ორჯერ" rules="isChecked"
+                        <InputRadio name="non_formal_meetings" value="twice_a_week" label="კვირაში ორჯერ" rules="isChecked"
                             :oldValue="this.getAllFormData.non_formal_meetings" />
-                        <RadioButton name="non_formal_meetings" value="once_a_week" label="კვირაში ერთხელ" />
-                        <RadioButton name="non_formal_meetings" value="once_in_a_two_weeks" label="ორ კვირაში ერთხელ" />
-                        <RadioButton name="non_formal_meetings" value="once_in_a_month " label="თვეში ერთხელ" />
+                        <InputRadio name="non_formal_meetings" value="once_a_week" label="კვირაში ერთხელ" />
+                        <InputRadio name="non_formal_meetings" value="once_in_a_two_weeks" label="ორ კვირაში ერთხელ" />
+                        <InputRadio name="non_formal_meetings" value="once_in_a_month " label="თვეში ერთხელ" />
                     </div>
                     <div class="flex flex-col gap-2">
                         <HeadingParagraph>კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*</HeadingParagraph>
-                        <RadioButton name="number_of_days_from_office" value="0" label="0" rules="isChecked"
+                        <InputRadio name="number_of_days_from_office" value="0" label="0" rules="isChecked"
                             :oldValue="this.getAllFormData.number_of_days_from_office" />
-                        <RadioButton name="number_of_days_from_office" value="1" label="1" />
-                        <RadioButton name="number_of_days_from_office" value="2" label="2" />
-                        <RadioButton name="number_of_days_from_office" value="3" label="3" />
-                        <RadioButton name="number_of_days_from_office" value="4" label="4" />
-                        <RadioButton name="number_of_days_from_office" value="5" label="5" />
+                        <InputRadio name="number_of_days_from_office" value="1" label="1" />
+                        <InputRadio name="number_of_days_from_office" value="2" label="2" />
+                        <InputRadio name="number_of_days_from_office" value="3" label="3" />
+                        <InputRadio name="number_of_days_from_office" value="4" label="4" />
+                        <InputRadio name="number_of_days_from_office" value="5" label="5" />
                     </div>
                     <div class="flex flex-col gap-5">
                         <HeadingParagraph>რას ფიქრობ ფიზიკურ შეკრებებზე?</HeadingParagraph>
-                        <TextArea name="what_about_meetings_in_live"
+                        <InputTextarea name="what_about_meetings_in_live"
                             :oldValue="this.getAllFormData.what_about_meetings_in_live" />
                     </div>
                     <div class="flex flex-col gap-5">
                         <HeadingParagraph>რას ფიქრობ არსებულ გარემოზე:
                             რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?</HeadingParagraph>
-                        <TextArea name="tell_us_your_opinion_about_us"
+                        <InputTextarea name="tell_us_your_opinion_about_us"
                             :oldValue="this.getAllFormData.tell_us_your_opinion_about_us" />
                     </div>
                     <div><button
@@ -50,8 +50,8 @@
 
                 </div>
                 <div class="max-h-781 ">
-                    <IconFifthPageHeart class="absolute mt-32 -z-10 ml-24 animate-shrink-little" />
-                    <IconFifthPage />
+                    <IconSuggestionsHeart class="absolute mt-32 -z-10 ml-24 animate-shrink-little" />
+                    <IconSuggestions />
                 </div>
 
             </div>
@@ -65,26 +65,26 @@
 <script>
 import { mapGetters, mapMutations } from 'vuex';
 import FormLayout from '@/components/layouts/FormLayout.vue';
-import IconFifthPage from '@/components/icons/IconFifthPage.vue';
-import IconFifthPageHeart from '@/components/icons/IconFifthPageHeart.vue';
-import RadioButton from '@/components/form/RadioButton.vue';
-import HeadingParagraph from '@/components/form/HeadingParagraph.vue';
-import NextArrow from '@/components/icons/NextArrow.vue';
-import BackArrow from '@/components/icons/BackArrow.vue';
-import TextSuggestion from '@/components/ui/TextSuggestion.vue';
-import TextArea from '@/components/form/TextArea.vue';
+import IconSuggestions from '@/components/icons/suggestions/IconSuggestions.vue';
+import IconSuggestionsHeart from '@/components/icons/suggestions/IconSuggestionsHeart.vue';
+import InputRadio from '@/components/ui/InputRadio.vue';
+import HeadingParagraph from '@/components/shared/HeadingParagraph.vue';
+import NextArrow from '@/components/icons/IconNextArrow.vue';
+import BackArrow from '@/components/icons/IconBackArrow.vue';
+import TextSuggestion from '@/components/shared/TextSuggestion.vue';
+import InputTextarea from '@/components/ui/InputTextarea.vue';
 import { createFormData } from '@/services/sendData.js';
 import { Form } from 'vee-validate';
 
 export default {
     components: {
         FormLayout,
-        IconFifthPage,
-        IconFifthPageHeart,
-        RadioButton,
+        IconSuggestions,
+        IconSuggestionsHeart,
+        InputRadio,
         HeadingParagraph,
         TextSuggestion,
-        TextArea,
+        InputTextarea,
         NextArrow,
         BackArrow,
         Form

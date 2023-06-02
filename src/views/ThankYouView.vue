@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import IconStarBig from '@/components/icons/IconStarBig.vue';
-import IconStarSmall from '@/components/icons/IconStarSmall.vue';
+import IconStarBig from '@/components/icons/thank-you/IconStarBig.vue';
+import IconStarSmall from '@/components/icons/thank-you/IconStarSmall.vue';
 
 export default {
     components: {

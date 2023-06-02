@@ -5,27 +5,27 @@
                 <div class="flex flex-col mt-10 gap-12 ">
                     <div class="flex flex-col gap-2 ">
                         <HeadingParagraph>უკვე აცრილი ხარ?*</HeadingParagraph>
-                        <RadioButton name="had_vaccine" value="yes" label="კი" rules="isChecked"
+                        <InputRadio name="had_vaccine" value="yes" label="კი" rules="isChecked"
                             :oldValue="this.getAllFormData.had_vaccine" @click="clearFormData(['i_am_waiting'])" />
-                        <RadioButton name="had_vaccine" value="no" label="არა"
+                        <InputRadio name="had_vaccine" value="no" label="არა"
                             @click="clearFormData(['vaccination_stage'])" />
                     </div>
                     <div class="flex flex-col gap-2" v-if="checkIfHadVacine()">
                         <HeadingParagraph>აირჩიე რა ეტაპზე ხარ*</HeadingParagraph>
-                        <RadioButton name="vaccination_stage" value="first_dosage_and_registered_on_the_second"
+                        <InputRadio name="vaccination_stage" value="first_dosage_and_registered_on_the_second"
                             label="პირველი დოზა და დარეგისტრირებული ვარ მეორეზე" rules="isChecked"
                             :oldValue="this.getAllFormData.vaccination_stage" />
-                        <RadioButton name="vaccination_stage" value="fully_vaccinated" label="სრულად აცრილი ვარ" />
-                        <RadioButton name="vaccination_stage" value="first_dosage_and_not_registered_yet"
+                        <InputRadio name="vaccination_stage" value="fully_vaccinated" label="სრულად აცრილი ვარ" />
+                        <InputRadio name="vaccination_stage" value="first_dosage_and_not_registered_yet"
                             label="პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე" />
                     </div>
                     <div class="flex flex-col gap-2 " v-else>
                         <HeadingParagraph>რას ელოდები?*</HeadingParagraph>
-                        <RadioButton name="i_am_waiting" value="registered_and_waiting"
+                        <InputRadio name="i_am_waiting" value="registered_and_waiting"
                             label="დარეგისტრირებული ვარ და ველოდები რიცხვს" rules="isChecked"
                             :oldValue="this.getAllFormData.i_am_waiting" />
-                        <RadioButton name="i_am_waiting" value="not_planning" label="არ ვგეგმავ" />
-                        <RadioButton name="i_am_waiting" value="had_covid_and_planning_to_be_vaccinated"
+                        <InputRadio name="i_am_waiting" value="not_planning" label="არ ვგეგმავ" />
+                        <InputRadio name="i_am_waiting" value="had_covid_and_planning_to_be_vaccinated"
                             label="გადატანილი მაქვს და ვგეგმავ აცრას" />
                     </div>
 
@@ -48,8 +48,8 @@
 
                 </div>
                 <div class="max-h-781">
-                    <IconForthPageStar class="absolute -z-10 ml-10 animate-slide" />
-                    <FourthPagePhoto />
+                    <IconVaccinationStar class="absolute -z-10 ml-10 animate-slide" />
+                    <IconVaccination />
                 </div>
 
             </div>
@@ -66,21 +66,21 @@
 <script>
 import { mapGetters, mapMutations } from 'vuex';
 import FormLayout from '@/components/layouts/FormLayout.vue';
-import FourthPagePhoto from '@/components/icons/FourthPagePhoto.vue';
-import IconForthPageStar from '@/components/icons/IconForthPageStar.vue';
-import RadioButton from '@/components/form/RadioButton.vue';
-import HeadingParagraph from '@/components/form/HeadingParagraph.vue';
-import NextArrow from '@/components/icons/NextArrow.vue';
-import BackArrow from '@/components/icons/BackArrow.vue';
-import TextSuggestion from '@/components/ui/TextSuggestion.vue';
+import IconVaccination from '@/components/icons/vaccination/IconVaccination.vue';
+import IconVaccinationStar from '@/components/icons/vaccination/IconVaccinationStar.vue';
+import InputRadio from '@/components/ui/InputRadio.vue';
+import HeadingParagraph from '@/components/shared/HeadingParagraph.vue';
+import NextArrow from '@/components/icons/IconNextArrow.vue';
+import BackArrow from '@/components/icons/IconBackArrow.vue';
+import TextSuggestion from '@/components/shared/TextSuggestion.vue';
 import { Form } from 'vee-validate';
 
 export default {
     components: {
         FormLayout,
-        FourthPagePhoto,
-        IconForthPageStar,
-        RadioButton,
+        IconVaccination,
+        IconVaccinationStar,
+        InputRadio,
         HeadingParagraph,
         TextSuggestion,
         NextArrow,

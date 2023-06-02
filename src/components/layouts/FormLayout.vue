@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Redberry from '@/components/icons/Redberry.vue';
+import Redberry from '@/components/icons/IconRedberry.vue';
 export default {
     props: {
         page: Number

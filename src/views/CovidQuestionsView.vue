@@ -5,19 +5,19 @@
                 <div class="flex flex-col mt-10 gap-12 max-w-xl">
                     <div class="flex flex-col gap-2 ">
                         <HeadingParagraph>გაქვს გადატანილი Covid-19?*</HeadingParagraph>
-                        <RadioButton name="had_covid" value="yes" label="კი" rules="isChecked"
+                        <InputRadio name="had_covid" value="yes" label="კი" rules="isChecked"
                             :oldValue="this.getAllFormData.had_covid" />
-                        <RadioButton name="had_covid" value="no" label="არა"
+                        <InputRadio name="had_covid" value="no" label="არა"
                             @click="clearFormData(['had_antibody_test', 'covid_sickness_date', 'antibodies_test_date', 'antibodies_number'])" />
-                        <RadioButton name="had_covid" value="have_right_now" label="ახლა მაქვს"
+                        <InputRadio name="had_covid" value="have_right_now" label="ახლა მაქვს"
                             @click="clearFormData(['had_antibody_test', 'covid_sickness_date', 'antibodies_test_date', 'antibodies_number'])" />
                     </div>
                     <div class="flex flex-col gap-2 " v-if="checkIfHadCovid()">
                         <HeadingParagraph>ანტისხეულების ტესტი გაქვს გაკეთებული?*</HeadingParagraph>
-                        <RadioButton name="had_antibody_test" value="yes" label="კი" rules="isChecked"
+                        <InputRadio name="had_antibody_test" value="yes" label="კი" rules="isChecked"
                             @click="clearFormData(['covid_sickness_date'])"
                             :oldValue="this.getAllFormData.had_antibody_test" />
-                        <RadioButton name="had_antibody_test" value="no" label="არა"
+                        <InputRadio name="had_antibody_test" value="no" label="არა"
                             @click="clearFormData(['antibodies_test_date', 'antibodies_number'])" />
                     </div>
                     <div class="flex flex-col gap-2" v-if="checkIfHadAntibodyTest('yes')">
@@ -36,8 +36,8 @@
                     </div>
                 </div>
                 <div class="max-h-781">
-                    <IconThirdPageCircle class="absolute mt-60 ml-20 -z-10 animate-slide" />
-                    <ThirdPagePhoto />
+                    <IconQuestionsCircle class="absolute mt-60 ml-20 -z-10 animate-slide" />
+                    <IconQuestions />
                 </div>
             </div>
             <div class="flex flex-row gap-28 justify-center">
@@ -53,23 +53,23 @@
 <script>
 import { mapGetters, mapMutations } from 'vuex';
 import FormLayout from '@/components/layouts/FormLayout.vue';
-import ThirdPagePhoto from '@/components/icons/ThirdPagePhoto.vue';
-import RadioButton from '@/components/form/RadioButton.vue';
-import IconThirdPageCircle from '@/components/icons/IconThirdPageCircle.vue';
-import InputField from '@/components/form/InputField.vue';
-import HeadingParagraph from '@/components/form/HeadingParagraph.vue';
-import NextArrow from '@/components/icons/NextArrow.vue';
-import BackArrow from '@/components/icons/BackArrow.vue';
+import IconQuestions from '@/components/icons/questions/IconQuestions.vue';
+import InputRadio from '@/components/ui/InputRadio.vue';
+import IconQuestionsCircle from '@/components/icons/questions/IconQuestionsCircle.vue';
+import InputField from '@/components/ui/InputField.vue';
+import HeadingParagraph from '@/components/shared/HeadingParagraph.vue';
+import NextArrow from '@/components/icons/IconNextArrow.vue';
+import BackArrow from '@/components/icons/IconBackArrow.vue';
 import { Form } from 'vee-validate';
 
 export default {
     components: {
         FormLayout,
-        ThirdPagePhoto,
+        IconQuestions,
         InputField,
-        RadioButton,
+        InputRadio,
         HeadingParagraph,
-        IconThirdPageCircle,
+        IconQuestionsCircle,
         NextArrow,
         BackArrow,
         Form

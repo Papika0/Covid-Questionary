@@ -4,7 +4,7 @@ export async function createFormData(formData) {
     try {
       const response = await api.post('/create', JSON.stringify(formData));
       if (response.status === 201) {
-        return response.data;
+        return true;
       } else {
         throw new Error('API request was not successful');
       }

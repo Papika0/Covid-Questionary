@@ -15,8 +15,8 @@
                     </div>
                 </div>
                 <div class="max-h-781">
-                    <IconSecondPageRectangle class="absolute mt-56 -z-10 ml-40 animate-slide" />
-                    <SecondPagePhoto />
+                    <IconIdentificationRectangle class="absolute mt-56 -z-10 ml-40 animate-slide" />
+                    <IconIdentification />
                 </div>
             </div>
             <div class="mx-auto flex justify-center">
@@ -31,17 +31,17 @@
 <script>
 import { mapGetters } from 'vuex';
 import FormLayout from '@/components/layouts/FormLayout.vue';
-import SecondPagePhoto from '@/components/icons/SecondPagePhoto.vue';
-import IconSecondPageRectangle from '@/components/icons/IconSecondPageRectangle.vue';
-import InputField from '@/components/form/InputField.vue';
-import NextArrow from '@/components/icons/NextArrow.vue';
+import IconIdentification from '@/components/icons/identification/IconIdentification.vue';
+import IconIdentificationRectangle from '@/components/icons/identification/IconIdentificationRectangle.vue';
+import InputField from '@/components/ui/InputField.vue';
+import NextArrow from '@/components/icons/IconNextArrow.vue';
 import { Form } from 'vee-validate';
 
 export default {
     components: {
         FormLayout,
-        SecondPagePhoto,
-        IconSecondPageRectangle,
+        IconIdentification,
+        IconIdentificationRectangle,
         InputField,
         NextArrow,
         Form
