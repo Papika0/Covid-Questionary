@@ -1,11 +1,11 @@
-import './assets/base.css'
+import '@/assets/base.css'
 
 import { createApp } from 'vue'
 
-import App from './App.vue'
-import router from './router'
-import { store } from './store'
-import "./config/vee-validate/rules";
+import App from '@/App.vue'
+import router from '@/router'
+import { store } from '@/store'
+import "@/config/vee-validate/rules";
 
 const app = createApp(App)
 

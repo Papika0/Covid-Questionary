@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/Home.vue'
-import Identification from '@/views/Identification.vue'
-import CovidQuestions from '@/views/CovidQuestions.vue'
-import Vaccination from '@/views/Vaccination.vue'
-import Suggestions from '@/views/Suggestions.vue'
-import ThankYou from '@/views/ThankYou.vue'
+import HomeView from '@/views/HomeView.vue'
+import IdentificationView from '@/views/IdentificationView.vue'
+import CovidQuestionsView from '@/views/CovidQuestionsView.vue'
+import VaccinationView from '@/views/VaccinationView.vue'
+import SuggestionsView from '@/views/SuggestionsView.vue'
+import ThankYouView from '@/views/ThankYouView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,32 +12,32 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: HomeView
     },
     {
       path: '/identification',
       name: 'identification',
-      component: Identification
+      component: IdentificationView
     },
     {
       path: '/covid-questions',
       name: 'questions',
-      component: CovidQuestions
+      component: CovidQuestionsView
     },
     {
       path: '/vaccination',
       name: 'vaccination',
-      component: Vaccination
+      component: VaccinationView
     },
     {
       path: '/suggestions',
       name: 'suggestions',
-      component: Suggestions
+      component: SuggestionsView
     }
     ,{
       path: '/thank-you',
       name: 'thank-you',
-      component: ThankYou
+      component: ThankYouView
     }
   ]
 })

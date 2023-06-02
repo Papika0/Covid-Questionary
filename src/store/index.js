@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import form from './modules/form';
+import form from '@/store/modules/form';
 
 
 const store = createStore({
