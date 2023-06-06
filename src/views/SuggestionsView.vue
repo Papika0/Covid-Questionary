@@ -101,12 +101,13 @@ export default {
             this.transformAndSetFormData();
             const filteredPairs = Object.entries(this.getAllFormData).filter(([key, value]) => value !== '');
             const filteredObject = Object.fromEntries(filteredPairs);
-            const success = await sendFormData(filteredObject);
-            if (success) {
+            const response = await sendFormData(filteredObject);
+            if (response.status === 201) {
                 this.$router.push('/thank-you');
                 localStorage.clear();
-            } else {
-                console.log('API request was not successful');
+            }
+            else {
+                throw new Error('Something went wrong');
             }
         },
     },
